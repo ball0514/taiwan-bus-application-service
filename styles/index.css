@@ -22,6 +22,7 @@ body .loading {
 body .loading img {
   width: 480px;
   height: 300px;
+  margin-bottom: 1rem;
 }
 body .loading .dotBox {
   width: 140px;
@@ -148,6 +149,9 @@ body .move {
 }
 
 @media (max-width: 1200px) {
+  body {
+    overflow: hidden;
+  }
   body section .title {
     margin: 0 0 0 5rem;
   }

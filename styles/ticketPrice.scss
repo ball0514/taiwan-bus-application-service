@@ -24,6 +24,7 @@ body {
     img {
       width: 480px;
       height: 300px;
+      margin-bottom: 1rem;
     }
     .dotBox {
       width: 140px;
@@ -281,6 +282,7 @@ body {
 
 @media (max-width: 1024px) {
   body {
+    overflow: hidden;
     .loading {
       img {
         width: 170px;

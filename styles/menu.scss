@@ -21,6 +21,7 @@ body {
     img {
       width: 480px;
       height: 300px;
+      margin-bottom: 1rem;
     }
     .dotBox {
       width: 140px;
@@ -243,14 +244,14 @@ body {
       }
       .scene {
         left: 3rem;
-        top: 8rem;
+        top: 6rem;
       }
       .bicycle {
-        top: 0;
+        top: -2rem;
       }
       .ticket {
         right: 2rem;
-        top: 6rem;
+        top: 4rem;
       }
     }
   }
@@ -265,8 +266,17 @@ body {
     }
     section {
       .car {
+        bottom: 4rem;
         direction: rtl;
         overflow-x: scroll;
+        /* Chrome Safari */
+        &::-webkit-scrollbar {
+          display: none; /* Chrome Safari */
+        }
+        /* Firefox */
+        scrollbar-width: none;
+        /* IE 10+ */
+        -ms-overflow-style: none;
         .bus {
           direction: ltr;
           left: 18rem;
@@ -277,6 +287,10 @@ body {
       }
       button {
         display: block;
+        bottom: 4rem;
+      }
+      .tip {
+        bottom: 5.5rem;
       }
     }
   }

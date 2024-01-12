@@ -21,6 +21,7 @@ body .loading {
 body .loading img {
   width: 480px;
   height: 300px;
+  margin-bottom: 1rem;
 }
 body .loading .dotBox {
   width: 140px;
@@ -231,14 +232,14 @@ body section .hidden {
   }
   body section .scene {
     left: 3rem;
-    top: 8rem;
+    top: 6rem;
   }
   body section .bicycle {
-    top: 0;
+    top: -2rem;
   }
   body section .ticket {
     right: 2rem;
-    top: 6rem;
+    top: 4rem;
   }
 }
 @media (max-width: 960px) {
@@ -246,8 +247,17 @@ body section .hidden {
     margin: 0 0 0 5rem;
   }
   body section .car {
+    bottom: 4rem;
     direction: rtl;
     overflow-x: scroll;
+    /* Chrome Safari */
+    /* Firefox */
+    scrollbar-width: none;
+    /* IE 10+ */
+    -ms-overflow-style: none;
+  }
+  body section .car::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
   }
   body section .car .bus {
     direction: ltr;
@@ -258,6 +268,10 @@ body section .hidden {
   }
   body section button {
     display: block;
+    bottom: 4rem;
+  }
+  body section .tip {
+    bottom: 5.5rem;
   }
 }
 @media (max-width: 640px) {
