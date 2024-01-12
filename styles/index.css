@@ -220,4 +220,21 @@ body .move {
     padding: 0;
     background-color: #e4dccb;
   }
+}
+@media (max-width: 400px) {
+  body #follow {
+    top: 25%;
+  }
+  body #choose {
+    top: 25%;
+  }
+  body .picture img {
+    bottom: 100px;
+  }
+  body .floor {
+    height: 100px;
+  }
+  body .list {
+    right: 50%;
+  }
 }/*# sourceMappingURL=index.css.map */

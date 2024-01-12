@@ -352,4 +352,35 @@ body section .hidden {
     bottom: 3rem;
     font-size: 1rem;
   }
+}
+@media (max-width: 400px) {
+  body section .cloud a img {
+    width: 35.84px;
+    height: 35.84px;
+  }
+  body section .cloud a p {
+    font-size: 1rem;
+  }
+  body section .scene {
+    width: 131.2px;
+    height: 106.096px;
+    top: 3rem;
+  }
+  body section .bicycle {
+    width: 144px;
+    height: 114.728px;
+    top: -1rem;
+    transform: translateX(-55%);
+  }
+  body section .ticket {
+    width: 131.2px;
+    height: 106.096px;
+    top: 2rem;
+  }
+  body section button {
+    bottom: 7rem;
+  }
+  body section .tip {
+    bottom: 8rem;
+  }
 }/*# sourceMappingURL=menu.css.map */

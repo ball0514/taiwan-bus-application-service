@@ -389,3 +389,43 @@ body {
     }
   }
 }
+
+@media (max-width: 400px) {
+  body {
+    section {
+      .cloud {
+        a {
+          img {
+            width: 35.84px;
+            height: 35.84px;
+          }
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+      .scene {
+        width: 131.2px;
+        height: 106.096px;
+        top: 3rem;
+      }
+      .bicycle {
+        width: 144px;
+        height: 114.728px;
+        top: -1rem;
+        transform: translateX(-55%);
+      }
+      .ticket {
+        width: 131.2px;
+        height: 106.096px;
+        top: 2rem;
+      }
+      button {
+        bottom: 7rem;
+      }
+      .tip {
+        bottom: 8rem;
+      }
+    }
+  }
+}

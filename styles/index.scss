@@ -238,3 +238,25 @@ body {
     }
   }
 }
+
+@media (max-width: 400px) {
+  body {
+    #follow {
+      top: 25%;
+    }
+    #choose {
+      top: 25%;
+    }
+    .picture {
+      img {
+        bottom: 100px;
+      }
+    }
+    .floor {
+      height: 100px;
+    }
+    .list {
+      right: 50%;
+    }
+  }
+}
