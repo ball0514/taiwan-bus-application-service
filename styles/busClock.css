@@ -1,0 +1,791 @@
+@charset "UTF-8";
+@font-face {
+  font-family: myFont;
+  src: url(./font/思源圓體Gen\ Jyuu\ Gothic\ Regular.ttf);
+}
+body {
+  font-family: myFont;
+  background-color: #e4dccb;
+}
+body .loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e4dccb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1000;
+}
+body .loading img {
+  width: 480px;
+  height: 300px;
+}
+body .loading .dotBox {
+  width: 140px;
+  height: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .loading .dotBox .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #997e5f;
+}
+body .loading .dotBox .hidden {
+  visibility: hidden;
+}
+body header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 20vh;
+}
+body header h1 {
+  visibility: hidden;
+}
+body header .title {
+  margin: 0 0 1rem 10rem;
+  color: #4d3f2f;
+  font-size: larger;
+}
+body header .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10rem;
+  width: 184px;
+  height: 82px;
+  color: #6f5b44;
+  font-size: 2rem;
+}
+body header .back img {
+  width: 36px;
+  height: 36px;
+  margin: 0.5rem;
+}
+body section {
+  display: flex;
+  justify-content: center;
+}
+body section .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  margin: 0 2rem;
+  border: 5px solid #6f5b44;
+  border-radius: 50px;
+}
+body section .box .boxName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44.8px;
+  margin: 20px 0;
+  padding: 1rem;
+  border-radius: 100px;
+  font-size: large;
+  font-weight: 700;
+}
+body section .box .name1 {
+  position: relative;
+  color: #6f5b44;
+  background-color: #e4dccb;
+}
+body section .box .name1 .back {
+  display: none;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+}
+body section .box .name1 .back img {
+  width: 100%;
+  height: 100%;
+}
+body section .box .name2 {
+  color: #e4dccb;
+  background-color: #6f5b44;
+}
+body section .box .name3 {
+  color: #e4dccb;
+  background-color: #6f5b44;
+}
+body section .box .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 80%;
+}
+body section .box .container form {
+  position: relative;
+}
+body section .box .container form input {
+  align-items: center;
+  width: 240px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 100px;
+  padding: 1rem;
+  background-color: white;
+}
+body section .box .container form button {
+  position: absolute;
+  left: 260px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+}
+body section .box .container form button img {
+  width: 100%;
+  height: 100%;
+}
+body section .box .container .btn {
+  width: 240px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 55px);
+  justify-content: center;
+  margin: 10px;
+  font-size: large;
+}
+body section .box .container .btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  box-shadow: 0 2px rgba(77, 63, 47, 0.4);
+  font-weight: 700;
+}
+body section .box .container .btn .special {
+  border: 3px solid #6f5b44;
+  color: #6f5b44;
+  background-color: white;
+}
+body section .box .container .btn .number {
+  background-color: #e4dccb;
+}
+body section .box .container .btn .cancel {
+  width: 120px;
+  color: white;
+  background-color: #6f5b44;
+}
+body section .box .container .noList {
+  text-align: center;
+}
+body section .box .container .noList img {
+  width: 160px;
+  height: 160px;
+}
+body section .box .container .noList p {
+  color: #997e5f;
+  text-align: center;
+  margin: 1rem;
+  font-weight: 700;
+}
+body section .box .container .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  /* Chrome Safari */
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE 10+ */
+  -ms-overflow-style: none;
+}
+body section .box .container .list::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+body section .box .container .list .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  height: 120px;
+  margin: 1rem;
+  border-radius: 20px;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+body section .box .container .list .item .bus {
+  width: 90%;
+}
+body section .box .container .list .item .bus p {
+  margin: 0.5rem;
+  font-weight: 700;
+}
+body section .box .container .list .item .bus .busName {
+  font-size: 1.2rem;
+  color: #6f5b44;
+}
+body section .box .container .list .item .like {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  margin: 0 0.5rem;
+  background: url("../images/Icon/like-outline-bus.svg") no-repeat center;
+}
+body section .box .container .list .item .like:hover {
+  background: url("../images/Icon/like-bus.svg") no-repeat center;
+}
+body section .box .container .list .item .love {
+  background: url("../images/Icon/like-bus.svg") no-repeat center;
+}
+body section .box .container .history {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  /* Chrome Safari */
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE 10+ */
+  -ms-overflow-style: none;
+}
+body section .box .container .history::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+body section .box .container .history .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  height: 120px;
+  margin: 1rem;
+  border-radius: 20px;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+body section .box .container .history .item .bus {
+  width: 90%;
+}
+body section .box .container .history .item .bus p {
+  margin: 0.5rem;
+  font-weight: 700;
+}
+body section .box .container .history .item .bus .busName {
+  font-size: 1.2rem;
+  color: #6f5b44;
+}
+body section .box .container .history .item .like {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  margin: 0 0.5rem;
+  background: url("../images/Icon/like-outline-bus.svg") no-repeat center;
+}
+body section .box .container .history .item .like:hover {
+  background: url("../images/Icon/like-bus.svg") no-repeat center;
+}
+body section .box .container .history .item .love {
+  background: url("../images/Icon/like-bus.svg") no-repeat center;
+}
+body section .box .container .hidden {
+  display: none;
+}
+body section .search {
+  width: 30vw;
+  background-color: #997e5f;
+}
+body section .result {
+  width: 50vw;
+}
+body section .detail .nav {
+  width: 100%;
+  height: 25%;
+  border-radius: 45px;
+  background-color: #997e5f;
+}
+body section .detail .nav .bar {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+body section .detail .nav .bar button {
+  position: absolute;
+}
+body section .detail .nav .bar button img {
+  width: 24px;
+  height: 24px;
+}
+body section .detail .nav .bar .info {
+  right: 72px;
+}
+body section .detail .nav .bar .map {
+  right: 2rem;
+}
+body section .detail .nav .bar p {
+  position: absolute;
+  left: 72px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body section .detail .nav .stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body section .detail .nav .stop ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+body section .detail .nav .stop ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body section .detail .nav .stop ul li button {
+  color: #6f5b44;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+body section .detail .nav .stop ul li .visible {
+  color: white;
+}
+body section .detail .nav .stop ul li .line {
+  width: 60px;
+  height: 4px;
+  margin: 0.5rem;
+  border-radius: 100px;
+}
+body section .detail .nav .stop ul li .selected {
+  background-color: white;
+}
+body section .detail .routeBox {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  margin: 1rem;
+  padding: 0 2rem;
+  overflow-y: auto;
+  /* Chrome Safari */
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE 10+ */
+  -ms-overflow-style: none;
+}
+body section .detail .routeBox::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+body section .detail .routeBox .route {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0.2rem;
+}
+body section .detail .routeBox .route div {
+  font-weight: 700;
+}
+body section .detail .routeBox .route .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 88px;
+  height: 40px;
+  margin: 0.2rem 1rem;
+  border-radius: 100px;
+  color: #997e5f;
+  background-color: white;
+}
+body section .detail .routeBox .route .nogo {
+  color: #b3b3b3;
+}
+body section .detail .routeBox .route .coming {
+  color: white;
+  background-color: #997e5f;
+}
+body section .detail .routeBox .route span {
+  position: absolute;
+  right: 2rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #997e5f;
+}
+body section .detail .routeBox .route .straight {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 110%;
+  margin-right: 8px;
+  border: 1px solid #997e5f;
+}
+body section .detail .routeBox .route .first {
+  bottom: 0;
+  transform: translateY(0);
+  height: 75%;
+}
+body section .detail .routeBox .route .last {
+  top: 0;
+  height: 75%;
+}
+body section .infoBox .nav {
+  width: 100%;
+  height: 25%;
+  border-radius: 45px;
+  background-color: #997e5f;
+}
+body section .infoBox .nav .bar {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+body section .infoBox .nav .bar button {
+  position: absolute;
+}
+body section .infoBox .nav .bar button img {
+  width: 24px;
+  height: 24px;
+}
+body section .infoBox .nav .bar .info {
+  right: 72px;
+}
+body section .infoBox .nav .bar .map {
+  right: 2rem;
+}
+body section .infoBox .nav .bar p {
+  position: absolute;
+  left: 72px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body section .infoBox .nav .stop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body section .infoBox .nav .stop ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+body section .infoBox .nav .stop ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body section .infoBox .nav .stop ul li button {
+  color: #6f5b44;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+body section .infoBox .nav .stop ul li .visible {
+  color: white;
+}
+body section .infoBox .nav .stop ul li .line {
+  width: 60px;
+  height: 4px;
+  margin: 0.5rem;
+  border-radius: 100px;
+}
+body section .infoBox .nav .stop ul li .selected {
+  background-color: white;
+}
+body section .infoBox .table {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 80%;
+  overflow-y: auto;
+  /* Chrome Safari */
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE 10+ */
+  -ms-overflow-style: none;
+}
+body section .infoBox .table::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+body section .infoBox .table input {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  width: 150px;
+  height: 30px;
+  border: 3px solid #6f5b44;
+  border-radius: 100px;
+  padding: 1rem;
+  color: #6f5b44;
+  font-weight: 700;
+}
+body section .infoBox .table div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 3rem 1rem;
+}
+body section .infoBox .table div p {
+  margin: 0.25rem;
+  font-weight: 700;
+}
+body section .infoBox .table div .title {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+body section .mapBox {
+  position: relative;
+  z-index: 0;
+}
+body section .mapBox .arrow-back {
+  position: absolute;
+  left: 2rem;
+  top: 4rem;
+  width: 24px;
+  height: 24px;
+  background: url("../images/Icon/arrow-left_brown.svg") no-repeat center;
+}
+body section .mapBox .googleMap {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 87.5%;
+  border-radius: 45px 45px 0 0;
+}
+body section .mapBox .stop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 12.5%;
+  border-radius: 0 0 45px 45px;
+  background-color: #997e5f;
+}
+body section .mapBox .stop ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+body section .mapBox .stop ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body section .mapBox .stop ul li button {
+  color: #6f5b44;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+body section .mapBox .stop ul li .visible {
+  color: white;
+}
+body section .mapBox .stop ul li .line {
+  width: 60px;
+  height: 4px;
+  margin: 0.5rem;
+  border-radius: 100px;
+}
+body section .mapBox .stop ul li .selected {
+  background-color: white;
+}
+body section .hidden {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  body .loading img {
+    width: 170px;
+    height: 82px;
+  }
+  body .loading .dotBox {
+    width: 76px;
+    height: 12px;
+  }
+  body .loading .dotBox .dot {
+    width: 12px;
+    height: 12px;
+  }
+  body header {
+    position: absolute;
+    z-index: -10;
+    visibility: hidden;
+  }
+  body section {
+    display: block;
+  }
+  body section .box {
+    width: 100vw;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  body section .box .boxName {
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 2rem;
+  }
+  body section .box .name1 {
+    color: white;
+    background-color: #6f5b44;
+  }
+  body section .box .name1 .back {
+    display: block;
+  }
+  body section .box .name1 .back img {
+    vertical-align: text-top;
+  }
+  body section .box .name2 {
+    display: none;
+  }
+  body section .box .name3 {
+    height: 4rem;
+    color: white;
+    background-color: #997e5f;
+  }
+  body section .box .container form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 70%;
+  }
+  body section .box .container form button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  body section .box .container form #swap {
+    left: -2rem;
+  }
+  body section .box .container form #submit {
+    right: -3rem;
+    margin: 0;
+    color: rgba(0, 0, 0, 0);
+    border: 0;
+    background: url("../images/Icon/search.svg") no-repeat center;
+  }
+  body section .box .container .btn {
+    display: none;
+  }
+  body section .search {
+    height: 20vh;
+    border-radius: 0 0 20px 20px;
+  }
+  body section .result {
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    height: 80vh;
+    background-color: #e4dccb;
+  }
+  body section .index {
+    padding-top: 1rem;
+  }
+  body section .detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: absolute;
+    top: 0;
+    background-color: #e4dccb;
+    height: 100vh;
+  }
+  body section .detail .nav {
+    height: 10%;
+    border-radius: 0 0 20px 20px;
+  }
+  body section .detail .routeBox {
+    height: 85%;
+    padding: 0 1rem;
+  }
+  body section .infoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+  }
+  body section .infoBox .nav {
+    height: 10%;
+    border-radius: 0 0 20px 20px;
+  }
+  body section .infoBox .table {
+    height: 85%;
+  }
+  body section .infoBox .table div {
+    margin-top: 5rem;
+  }
+  body section .mapBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+  }
+  body section .mapBox .arrow-back {
+    top: 1.25rem;
+    background: url("../images/Icon/arrow-left_white.svg") no-repeat center;
+  }
+  body section .mapBox .googleMap {
+    bottom: 0;
+    height: 92.5%;
+    border-radius: 0;
+  }
+  body section .mapBox .stop {
+    top: 3.5rem;
+    height: 5%;
+  }
+  body section .hidden {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  body section .box .boxName {
+    font-size: 1.5rem;
+  }
+  body section .detail .nav {
+    height: 15%;
+  }
+  body section .infoBox .nav {
+    height: 15%;
+  }
+  body section .mapBox .stop {
+    height: 10%;
+  }
+}/*# sourceMappingURL=busClock.css.map */

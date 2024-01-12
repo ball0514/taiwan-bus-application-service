@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/menu.css" />
+    <link rel="icon" href="./images/Icon/Logo.svg" />
+    <title>公車別走｜全台公車動態時刻查詢應用服務</title>
+  </head>
+  <body>
+    <div class="loading">
+      <img src="./images/Icon/bus.svg" alt="" />
+      <div class="dotBox">
+        <div class="dot hidden"></div>
+        <div class="dot hidden"></div>
+        <div class="dot hidden"></div>
+      </div>
+    </div>
+    <header>
+      <h1>公車別走</h1>
+      <a href="./index.html">
+        <img src="./images/Icon/title.svg" alt="公車別走" class="title" />
+      </a>
+      <a href="./index.html" id="city"></a>
+    </header>
+    <section>
+      <div class="cloud scene">
+        <a href="">
+          <img src="./images/Icon/scenespot.svg" alt="" />
+          <p>旅遊觀光</p>
+        </a>
+      </div>
+      <div class="cloud bicycle">
+        <a href="">
+          <img src="./images/Icon/bicycle.svg" alt="" />
+          <p>自行車</p>
+        </a>
+      </div>
+      <div class="cloud ticket">
+        <a href="./ticketPrice.html">
+          <img src="./images/Icon/ticket.svg" alt="" />
+          <p>票價</p>
+        </a>
+      </div>
+      <div class="car">
+        <div class="bus">
+          <ul>
+            <li>
+              <a href="./collection.html">
+                <img src="./images/Icon/heart-outline.svg" alt="" />
+                <p>我的收藏</p>
+              </a>
+            </li>
+            <li>
+              <a href="./nearby.html">
+                <img src="./images/Icon/near-me.svg" alt="" />
+                <p>附近站牌</p>
+              </a>
+            </li>
+            <li>
+              <a href="./busMarker.html">
+                <img src="./images/Icon/bus-marker.svg" alt="" />
+                <p>路線規劃</p>
+              </a>
+            </li>
+            <li>
+              <a href="./busClock.html">
+                <img src="./images/Icon/bus-clock.svg" alt="" />
+                <p>公車動態</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="shadow"></div>
+      </div>
+      <button><img src="./images/Icon/tip-light.svg" alt="" /></button>
+      <p class="tip hidden">車子可左右拖曳唷！</p>
+    </section>
+
+    <script>
+      // 在所有内容加載完成後顯示網頁内容
+      window.onload = function () {
+        clearInterval(repeat);
+        // 隱藏 loading 页面
+        document.querySelector(".loading").style.display = "none";
+        // // 顯示網頁内容
+        // document.querySelector("header").style.visibility = "visible";
+        // document.querySelector("section").style.visibility = "visible";
+      };
+    </script>
+    <script>
+      // 從 URL 中獲取参數
+      let urlParams = new URLSearchParams(window.location.search);
+      let city = urlParams.get("city");
+
+      localStorage.setItem("city", city);
+
+      // 在頁面中顯示選擇的值
+      document.querySelector("#city").textContent = city;
+    </script>
+    <script src="./js/menu.js"></script>
+  </body>
+</html>

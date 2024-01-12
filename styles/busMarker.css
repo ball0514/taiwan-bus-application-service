@@ -1,0 +1,321 @@
+@charset "UTF-8";
+@font-face {
+  font-family: myFont;
+  src: url(./font/思源圓體Gen\ Jyuu\ Gothic\ Regular.ttf);
+}
+body {
+  font-family: myFont;
+  background-color: #e4dccb;
+}
+body .loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e4dccb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1000;
+}
+body .loading img {
+  width: 480px;
+  height: 300px;
+}
+body .loading .dotBox {
+  width: 140px;
+  height: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .loading .dotBox .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #997e5f;
+}
+body .loading .dotBox .hidden {
+  visibility: hidden;
+}
+body header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 20vh;
+}
+body header h1 {
+  visibility: hidden;
+}
+body header .title {
+  margin: 0 0 1rem 10rem;
+  color: #4d3f2f;
+  font-size: larger;
+}
+body header .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10rem;
+  width: 184px;
+  height: 82px;
+  color: #6f5b44;
+  font-size: 2rem;
+}
+body header .back img {
+  width: 36px;
+  height: 36px;
+  margin: 0.5rem;
+}
+body section {
+  display: flex;
+  justify-content: center;
+}
+body section .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  margin: 0 2rem;
+  border: 5px solid #6f5b44;
+  border-radius: 50px;
+}
+body section .box .boxName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44.8px;
+  margin: 20px 0;
+  padding: 1rem;
+  border-radius: 100px;
+  font-size: large;
+  font-weight: 700;
+}
+body section .box .name1 {
+  position: relative;
+  color: #6f5b44;
+  background-color: #e4dccb;
+}
+body section .box .name1 .back {
+  display: none;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+}
+body section .box .name1 .back img {
+  width: 100%;
+  height: 100%;
+}
+body section .box .name2 {
+  color: #e4dccb;
+  background-color: #6f5b44;
+}
+body section .box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body section .box form input {
+  align-items: center;
+  width: 240px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 100px;
+  padding: 1rem;
+  background-color: white;
+}
+body section .box form #swap {
+  width: 35px;
+  height: 35px;
+}
+body section .box form #swap img {
+  width: 100%;
+  height: 100%;
+}
+body section .box form #submit {
+  text-align: center;
+  margin-top: 20px;
+  width: 64px;
+  height: 40px;
+  color: white;
+  border: 3px solid white;
+  border-radius: 100px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body section .box .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 80%;
+}
+body section .box .container .noList {
+  text-align: center;
+}
+body section .box .container .noList img {
+  width: 160px;
+  height: 160px;
+}
+body section .box .container .noList p {
+  color: #997e5f;
+  text-align: center;
+  margin: 1rem;
+  font-weight: 700;
+}
+body section .box .container .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  /* Chrome Safari */
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE 10+ */
+  -ms-overflow-style: none;
+}
+body section .box .container .list::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+body section .box .container .list .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  height: 120px;
+  margin: 1rem;
+  border-radius: 20px;
+  padding: 1.2rem;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+body section .box .container .list .item .busName {
+  display: flex;
+  align-items: center;
+}
+body section .box .container .list .item .busName img {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+}
+body section .box .container .list .item .busName p {
+  color: #6f5b44;
+  font-weight: 700;
+}
+body section .box .container .list .item p {
+  margin: 0.6rem 0;
+  font-weight: 700;
+}
+body section .box .container .hidden {
+  display: none;
+}
+body section .search {
+  width: 30vw;
+  background-color: #997e5f;
+}
+body section .result {
+  width: 50vw;
+}
+
+@media (max-width: 1024px) {
+  body .loading img {
+    width: 170px;
+    height: 82px;
+  }
+  body .loading .dotBox {
+    width: 76px;
+    height: 12px;
+  }
+  body .loading .dotBox .dot {
+    width: 12px;
+    height: 12px;
+  }
+  body header {
+    position: absolute;
+    z-index: -10;
+    visibility: hidden;
+  }
+  body section {
+    display: block;
+  }
+  body section .box {
+    width: 100vw;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  body section .box .boxName {
+    width: 100%;
+    height: 30%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 2rem;
+  }
+  body section .box .name1 {
+    color: white;
+    background-color: #6f5b44;
+  }
+  body section .box .name1 .back {
+    display: block;
+  }
+  body section .box .name1 .back img {
+    vertical-align: text-top;
+  }
+  body section .box .name2 {
+    display: none;
+  }
+  body section .box form {
+    justify-content: center;
+    position: relative;
+    height: 70%;
+  }
+  body section .box form button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  body section .box form #swap {
+    left: -2rem;
+  }
+  body section .box form #submit {
+    right: -3rem;
+    margin: 0;
+    color: rgba(0, 0, 0, 0);
+    border: 0;
+    background: url("../images/Icon/search.svg") no-repeat center;
+  }
+  body section .search {
+    height: 20vh;
+    border-radius: 0 0 20px 20px;
+  }
+  body section .result {
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    height: 80vh;
+  }
+  body section .index {
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  body section .box .boxName {
+    font-size: 1.5rem;
+  }
+  body section .search {
+    height: 30vh;
+  }
+  body section .result {
+    height: 70vh;
+  }
+}/*# sourceMappingURL=busMarker.css.map */

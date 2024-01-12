@@ -1,0 +1,350 @@
+@charset "UTF-8";
+@font-face {
+  font-family: myFont;
+  src: url(./font/思源圓體Gen\ Jyuu\ Gothic\ Regular.ttf);
+}
+body {
+  font-family: myFont;
+  background-color: #e4dccb;
+}
+body .loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e4dccb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1000;
+}
+body .loading img {
+  width: 480px;
+  height: 300px;
+}
+body .loading .dotBox {
+  width: 140px;
+  height: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .loading .dotBox .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #997e5f;
+}
+body .loading .dotBox .hidden {
+  visibility: hidden;
+}
+body header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 20vh;
+}
+body header h1 {
+  visibility: hidden;
+}
+body header .title {
+  margin: 0 0 1rem 10rem;
+  color: #4d3f2f;
+  font-size: larger;
+}
+body header .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10rem;
+  width: 184px;
+  height: 82px;
+  color: #6f5b44;
+  font-size: 2rem;
+}
+body header .back img {
+  width: 36px;
+  height: 36px;
+  margin: 0.5rem;
+}
+body section {
+  display: flex;
+  justify-content: center;
+}
+body section .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  margin: 0 2rem;
+  border: 5px solid #6f5b44;
+  border-radius: 50px;
+}
+body section .box .boxName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44.8px;
+  margin: 20px 0;
+  padding: 1rem;
+  border-radius: 100px;
+  font-size: large;
+  font-weight: 700;
+}
+body section .box .name1 {
+  position: relative;
+  color: #6f5b44;
+  background-color: #e4dccb;
+}
+body section .box .name1 .back {
+  display: none;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+}
+body section .box .name1 .back img {
+  width: 100%;
+  height: 100%;
+}
+body section .box .name2 {
+  color: #e4dccb;
+  background-color: #6f5b44;
+}
+body section .box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body section .box form select {
+  width: 300px;
+  margin: 0.5rem;
+  border-radius: 100px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+body section .box form #bus {
+  height: 65px;
+  color: #b3b3b3;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: white;
+  background-image: url("../images/Icon/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+body section .box form #bus option {
+  color: black;
+  background-color: #e4dccb;
+}
+body section .box form #start {
+  text-align: center;
+  height: 50px;
+  color: white;
+  background-color: #6f5b44;
+}
+body section .box form #end {
+  text-align: center;
+  height: 50px;
+  color: #4d3f2f;
+  background-color: #e4dccb;
+}
+body section .box form #submit {
+  text-align: center;
+  margin-top: 20px;
+  width: 64px;
+  height: 40px;
+  color: #e4dccb;
+  border: 3px solid #e4dccb;
+  border-radius: 100px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body section .box .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 80%;
+}
+body section .box .container .noList {
+  text-align: center;
+}
+body section .box .container .noList img {
+  width: 160px;
+  height: 160px;
+}
+body section .box .container .noList p {
+  color: #997e5f;
+  text-align: center;
+  margin: 1rem;
+  font-weight: 700;
+}
+body section .box .container .list {
+  width: 90%;
+}
+body section .box .container .list .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #997e5f;
+  margin: 2rem 0 1rem;
+  border: 3px solid #997e5f;
+  border-radius: 100px;
+  padding: 1rem;
+  width: 160px;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body section .box .container .list .price img {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+}
+body section .box .container .list ul li {
+  margin: 1.5rem;
+}
+body section .box .container .list ul li span {
+  border-radius: 100px;
+  padding: 0.5rem;
+  color: #e4dccb;
+  background-color: #4d3f2f;
+}
+body section .box .container .list ul li img {
+  width: 24px;
+  height: 24px;
+}
+body section .box .container .hidden {
+  display: none;
+}
+body section .search {
+  width: 30vw;
+  background-color: #997e5f;
+}
+body section .result {
+  width: 50vw;
+}
+body section .warm {
+  display: flex;
+  align-items: center;
+  width: 80vw;
+  height: 60px;
+  position: absolute;
+  bottom: 7rem;
+  border-radius: 10px;
+  padding: 0 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body section .warm img {
+  margin-right: 1rem;
+}
+body section .warm .cross {
+  position: absolute;
+  right: 1rem;
+}
+body section .hidden {
+  display: none;
+}
+body section .out {
+  animation: out 0.5s ease-out;
+}
+@keyframes out {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+@media (max-width: 1024px) {
+  body .loading img {
+    width: 170px;
+    height: 82px;
+  }
+  body .loading .dotBox {
+    width: 76px;
+    height: 12px;
+  }
+  body .loading .dotBox .dot {
+    width: 12px;
+    height: 12px;
+  }
+  body header {
+    position: absolute;
+    z-index: -10;
+    visibility: hidden;
+  }
+  body section {
+    display: block;
+  }
+  body section .box {
+    width: 100vw;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  body section .box .boxName {
+    width: 100%;
+    height: 20%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 2rem;
+  }
+  body section .box .name1 {
+    color: white;
+    background-color: #6f5b44;
+  }
+  body section .box .name1 .back {
+    display: block;
+  }
+  body section .box .name1 .back img {
+    vertical-align: text-top;
+  }
+  body section .box .name2 {
+    display: none;
+  }
+  body section .box form {
+    justify-content: center;
+    position: relative;
+    height: 80%;
+    padding: 1rem;
+  }
+  body section .box form #bus {
+    margin: 0 0 1rem;
+  }
+  body section .box form #submit {
+    margin: 1rem 0 0;
+  }
+  body section .search {
+    height: 30vh;
+    border-radius: 0 0 20px 20px;
+  }
+  body section .result {
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    height: 70vh;
+  }
+  body section .index {
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  body section .box .boxName {
+    font-size: 1.5rem;
+  }
+  body section .search {
+    height: 40vh;
+  }
+  body section .result {
+    height: 60vh;
+  }
+}/*# sourceMappingURL=ticketPrice.css.map */

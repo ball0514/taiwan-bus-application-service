@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/collection.css" />
+    <link rel="icon" href="./images/Icon/Logo.svg" />
+    <title>公車別走｜全台公車動態時刻查詢應用服務</title>
+  </head>
+  <body>
+    <div class="loading">
+      <img src="./images/Icon/bus.svg" alt="" />
+      <div class="dotBox">
+        <div class="dot hidden"></div>
+        <div class="dot hidden"></div>
+        <div class="dot hidden"></div>
+      </div>
+    </div>
+    <header>
+      <h1>公車別走</h1>
+      <a href="./index.html">
+        <img src="./images/Icon/title.svg" alt="公車別走" class="title" />
+      </a>
+      <a href="#" class="back">
+        <img src="./images/Icon/arrow-back.svg" alt="" />回選單</a
+      >
+    </header>
+    <section>
+      <div class="box">
+        <p class="title">
+          <a href="#" class="back">
+            <img src="./images/Icon/arrow-left_white.svg" alt="" /></a
+          >收藏
+        </p>
+        <p class="switch">
+          站牌　班次 <button id="stop">站牌</button
+          ><button id="bus" class="hidden">班次</button>
+        </p>
+        <div class="noList"></div>
+        <div class="list"></div>
+      </div>
+    </section>
+
+    <script>
+      // 在所有内容加載完成後顯示網頁内容
+      window.onload = function () {
+        clearInterval(repeat);
+        // 隱藏 loading 页面
+        document.querySelector(".loading").style.display = "none";
+      };
+    </script>
+
+    <script>
+      // 從 URL 中獲取参數
+      let urlParams = new URLSearchParams(window.location.search);
+      let bus = urlParams.get("bus");
+    </script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="./js/api.js"></script>
+
+    <script>
+      // const city = localStorage.getItem("city");
+      const address = `./menu.html?city=${city}`;
+      const link = document.querySelectorAll(".back");
+      link.forEach((btn) => {
+        btn.href = address;
+      });
+    </script>
+
+    <script src="./js/collection.js"></script>
+  </body>
+</html>

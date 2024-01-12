@@ -1,0 +1,823 @@
+$themeColorWord: #4d3f2f;
+$themeColorBackground: #e4dccb;
+$themeColor1: #6f5b44;
+$themeColor2: #997e5f;
+
+@font-face {
+  font-family: myFont;
+  src: url(./font/思源圓體Gen\ Jyuu\ Gothic\ Regular.ttf);
+}
+
+body {
+  font-family: myFont;
+  background-color: $themeColorBackground;
+  .loading {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e4dccb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1000;
+    img {
+      width: 480px;
+      height: 300px;
+    }
+    .dotBox {
+      width: 140px;
+      height: 20px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #997e5f;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+    }
+  }
+  header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 20vh;
+    h1 {
+      visibility: hidden;
+    }
+    .title {
+      margin: 0 0 1rem 10rem;
+      color: $themeColorWord;
+      font-size: larger;
+    }
+    .back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 10rem;
+      width: 184px;
+      height: 82px;
+      color: $themeColor1;
+      font-size: 2rem;
+      img {
+        width: 36px;
+        height: 36px;
+        margin: 0.5rem;
+      }
+    }
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 70vh;
+      margin: 0 2rem;
+      border: 5px solid $themeColor1;
+      border-radius: 50px;
+      .boxName {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 44.8px;
+        margin: 20px 0;
+        padding: 1rem;
+        border-radius: 100px;
+        font-size: large;
+        font-weight: 700;
+      }
+      .name1 {
+        position: relative;
+        color: $themeColor1;
+        background-color: $themeColorBackground;
+        .back {
+          display: none;
+          position: absolute;
+          left: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 28px;
+          height: 28px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .name2 {
+        color: $themeColorBackground;
+        background-color: $themeColor1;
+      }
+      .name3 {
+        color: $themeColorBackground;
+        background-color: $themeColor1;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: 80%;
+        form {
+          position: relative;
+          input {
+            align-items: center;
+            width: 240px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 100px;
+            padding: 1rem;
+            background-color: white;
+          }
+          button {
+            position: absolute;
+            left: 260px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .btn {
+          width: 240px;
+          display: grid;
+          grid-gap: 10px;
+          grid-template-columns: repeat(auto-fill, 55px);
+          justify-content: center;
+          margin: 10px;
+          font-size: large;
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
+            box-shadow: 0 2px rgba($color: $themeColorWord, $alpha: 0.4);
+            font-weight: 700;
+          }
+          .special {
+            border: 3px solid $themeColor1;
+            color: $themeColor1;
+            background-color: white;
+          }
+          .number {
+            background-color: $themeColorBackground;
+          }
+          .cancel {
+            width: 120px;
+            color: white;
+            background-color: $themeColor1;
+          }
+        }
+        .noList {
+          text-align: center;
+          img {
+            width: 160px;
+            height: 160px;
+          }
+          p {
+            color: $themeColor2;
+            text-align: center;
+            margin: 1rem;
+            font-weight: 700;
+          }
+        }
+        .list {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          overflow-y: auto;
+          /* Chrome Safari */
+          &::-webkit-scrollbar {
+            display: none; /* Chrome Safari */
+          }
+          /* Firefox */
+          scrollbar-width: none;
+          /* IE 10+ */
+          -ms-overflow-style: none;
+          .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            width: 90%;
+            height: 120px;
+            margin: 1rem;
+            border-radius: 20px;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 1px 4px rgba($color: #000000, $alpha: 0.25);
+            .bus {
+              width: 90%;
+              p {
+                margin: 0.5rem;
+                font-weight: 700;
+              }
+              .busName {
+                font-size: 1.2rem;
+                color: $themeColor1;
+              }
+            }
+            .like {
+              position: absolute;
+              right: 1rem;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 24px;
+              height: 24px;
+              margin: 0 0.5rem;
+              background: url("../images/Icon/like-outline-bus.svg") no-repeat
+                center;
+              &:hover {
+                background: url("../images/Icon/like-bus.svg") no-repeat center;
+              }
+            }
+            .love {
+              background: url("../images/Icon/like-bus.svg") no-repeat center;
+            }
+          }
+        }
+        .history {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          overflow-y: auto;
+          /* Chrome Safari */
+          &::-webkit-scrollbar {
+            display: none; /* Chrome Safari */
+          }
+          /* Firefox */
+          scrollbar-width: none;
+          /* IE 10+ */
+          -ms-overflow-style: none;
+          .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            width: 90%;
+            height: 120px;
+            margin: 1rem;
+            border-radius: 20px;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 1px 4px rgba($color: #000000, $alpha: 0.25);
+            .bus {
+              width: 90%;
+              p {
+                margin: 0.5rem;
+                font-weight: 700;
+              }
+              .busName {
+                font-size: 1.2rem;
+                color: $themeColor1;
+              }
+            }
+            .like {
+              position: absolute;
+              right: 1rem;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 24px;
+              height: 24px;
+              margin: 0 0.5rem;
+              background: url("../images/Icon/like-outline-bus.svg") no-repeat
+                center;
+              &:hover {
+                background: url("../images/Icon/like-bus.svg") no-repeat center;
+              }
+            }
+            .love {
+              background: url("../images/Icon/like-bus.svg") no-repeat center;
+            }
+          }
+        }
+        .hidden {
+          display: none;
+        }
+      }
+    }
+    .search {
+      width: 30vw;
+      background-color: $themeColor2;
+    }
+    .result {
+      width: 50vw;
+    }
+    .detail {
+      .nav {
+        width: 100%;
+        height: 25%;
+        border-radius: 45px;
+        background-color: $themeColor2;
+        .bar {
+          display: flex;
+          align-items: center;
+          padding: 2rem;
+          position: relative;
+          button {
+            position: absolute;
+            img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+          .info {
+            right: 72px;
+          }
+          .map {
+            right: 2rem;
+          }
+          p {
+            position: absolute;
+            left: 72px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+          }
+        }
+        .stop {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            li {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              button {
+                color: $themeColor1;
+                font-size: 1.5rem;
+                font-weight: 700;
+              }
+              .visible {
+                color: white;
+              }
+              .line {
+                width: 60px;
+                height: 4px;
+                margin: 0.5rem;
+                border-radius: 100px;
+              }
+              .selected {
+                background-color: white;
+              }
+            }
+          }
+        }
+      }
+      .routeBox {
+        position: relative;
+        width: 100%;
+        height: 80%;
+        margin: 1rem;
+        padding: 0 2rem;
+        overflow-y: auto;
+        /* Chrome Safari */
+        &::-webkit-scrollbar {
+          display: none; /* Chrome Safari */
+        }
+        /* Firefox */
+        scrollbar-width: none;
+        /* IE 10+ */
+        -ms-overflow-style: none;
+        .route {
+          display: flex;
+          align-items: center;
+          position: relative;
+          margin: 0.2rem;
+          div {
+            font-weight: 700;
+          }
+          .time {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 88px;
+            height: 40px;
+            margin: 0.2rem 1rem;
+            border-radius: 100px;
+            color: $themeColor2;
+            background-color: white;
+          }
+          .nogo {
+            color: #b3b3b3;
+          }
+          .coming {
+            color: white;
+            background-color: $themeColor2;
+          }
+          span {
+            position: absolute;
+            right: 2rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: $themeColor2;
+          }
+          .straight {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 110%;
+            margin-right: 8px;
+            border: 1px solid $themeColor2;
+          }
+          .first {
+            bottom: 0;
+            transform: translateY(0);
+            height: 75%;
+          }
+          .last {
+            top: 0;
+            height: 75%;
+          }
+        }
+      }
+    }
+    .infoBox {
+      .nav {
+        width: 100%;
+        height: 25%;
+        border-radius: 45px;
+        background-color: $themeColor2;
+        .bar {
+          display: flex;
+          align-items: center;
+          padding: 2rem;
+          position: relative;
+          button {
+            position: absolute;
+            img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+          .info {
+            right: 72px;
+          }
+          .map {
+            right: 2rem;
+          }
+          p {
+            position: absolute;
+            left: 72px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+          }
+        }
+        .stop {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            li {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              button {
+                color: $themeColor1;
+                font-size: 1.5rem;
+                font-weight: 700;
+              }
+              .visible {
+                color: white;
+              }
+              .line {
+                width: 60px;
+                height: 4px;
+                margin: 0.5rem;
+                border-radius: 100px;
+              }
+              .selected {
+                background-color: white;
+              }
+            }
+          }
+        }
+      }
+      .table {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 80%;
+        overflow-y: auto;
+        /* Chrome Safari */
+        &::-webkit-scrollbar {
+          display: none; /* Chrome Safari */
+        }
+        /* Firefox */
+        scrollbar-width: none;
+        /* IE 10+ */
+        -ms-overflow-style: none;
+        input {
+          position: absolute;
+          left: 2rem;
+          top: 2rem;
+          width: 150px;
+          height: 30px;
+          border: 3px solid $themeColor1;
+          border-radius: 100px;
+          padding: 1rem;
+          color: $themeColor1;
+          font-weight: 700;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 3rem 3rem 1rem;
+          p {
+            margin: 0.25rem;
+            font-weight: 700;
+          }
+          .title {
+            font-size: 1.5rem;
+            margin: 1rem;
+          }
+        }
+      }
+    }
+    .mapBox {
+      position: relative;
+      z-index: 0;
+      .arrow-back {
+        position: absolute;
+        left: 2rem;
+        top: 4rem;
+        width: 24px;
+        height: 24px;
+        background: url("../images/Icon/arrow-left_brown.svg") no-repeat center;
+      }
+      .googleMap {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 87.5%;
+        border-radius: 45px 45px 0 0;
+      }
+      .stop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 12.5%;
+        border-radius: 0 0 45px 45px;
+        background-color: $themeColor2;
+        ul {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          width: 100%;
+          li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            button {
+              color: $themeColor1;
+              font-size: 1.5rem;
+              font-weight: 700;
+            }
+            .visible {
+              color: white;
+            }
+            .line {
+              width: 60px;
+              height: 4px;
+              margin: 0.5rem;
+              border-radius: 100px;
+            }
+            .selected {
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    .loading {
+      img {
+        width: 170px;
+        height: 82px;
+      }
+      .dotBox {
+        width: 76px;
+        height: 12px;
+        .dot {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+    header {
+      position: absolute;
+      z-index: -10;
+      visibility: hidden;
+    }
+    section {
+      display: block;
+      .box {
+        width: 100vw;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        .boxName {
+          width: 100%;
+          height: 50%;
+          margin: 0;
+          border: 0;
+          border-radius: 0;
+          font-size: 2rem;
+        }
+        .name1 {
+          color: white;
+          background-color: $themeColor1;
+          .back {
+            display: block;
+            img {
+              vertical-align: text-top;
+            }
+          }
+        }
+        .name2 {
+          display: none;
+        }
+        .name3 {
+          height: 4rem;
+          color: white;
+          background-color: $themeColor2;
+        }
+        .container {
+          form {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 70%;
+            button {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            #swap {
+              left: -2rem;
+            }
+            #submit {
+              right: -3rem;
+              margin: 0;
+              color: rgba(0, 0, 0, 0);
+              border: 0;
+              background: url("../images/Icon/search.svg") no-repeat center;
+            }
+          }
+          .btn {
+            display: none;
+          }
+        }
+      }
+      .search {
+        height: 20vh;
+        border-radius: 0 0 20px 20px;
+      }
+      .result {
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        height: 80vh;
+        // padding-top: 1rem;
+        background-color: $themeColorBackground;
+      }
+      .index {
+        padding-top: 1rem;
+      }
+      .detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        position: absolute;
+        top: 0;
+        background-color: $themeColorBackground;
+        height: 100vh;
+        .nav {
+          height: 10%;
+          border-radius: 0 0 20px 20px;
+        }
+        .routeBox {
+          height: 85%;
+          padding: 0 1rem;
+        }
+      }
+      .infoBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        .nav {
+          height: 10%;
+          border-radius: 0 0 20px 20px;
+        }
+        .table {
+          height: 85%;
+          div {
+            margin-top: 5rem;
+          }
+        }
+      }
+      .mapBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        .arrow-back {
+          top: 1.25rem;
+          background: url("../images/Icon/arrow-left_white.svg") no-repeat
+            center;
+        }
+        .googleMap {
+          bottom: 0;
+          height: 92.5%;
+          border-radius: 0;
+        }
+        .stop {
+          top: 3.5rem;
+          height: 5%;
+        }
+      }
+      .hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    section {
+      .box {
+        .boxName {
+          font-size: 1.5rem;
+        }
+      }
+      .detail {
+        .nav {
+          height: 15%;
+        }
+      }
+      .infoBox {
+        .nav {
+          height: 15%;
+        }
+      }
+      .mapBox {
+        .stop {
+          height: 10%;
+        }
+      }
+    }
+  }
+}

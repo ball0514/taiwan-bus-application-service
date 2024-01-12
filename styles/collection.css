@@ -1,0 +1,305 @@
+@charset "UTF-8";
+@font-face {
+  font-family: myFont;
+  src: url(./font/思源圓體Gen\ Jyuu\ Gothic\ Regular.ttf);
+}
+body {
+  font-family: myFont;
+  background-color: #e4dccb;
+}
+body .loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e4dccb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1000;
+}
+body .loading img {
+  width: 480px;
+  height: 300px;
+}
+body .loading .dotBox {
+  width: 140px;
+  height: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+body .loading .dotBox .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #997e5f;
+}
+body .loading .dotBox .hidden {
+  visibility: hidden;
+}
+body header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 20vh;
+}
+body header h1 {
+  visibility: hidden;
+}
+body header .title {
+  margin: 0 0 1rem 10rem;
+  color: #4d3f2f;
+  font-size: larger;
+}
+body header .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10rem;
+  width: 184px;
+  height: 82px;
+  color: #6f5b44;
+  font-size: 2rem;
+}
+body header .back img {
+  width: 36px;
+  height: 36px;
+  margin: 0.5rem;
+}
+body section {
+  display: flex;
+  justify-content: center;
+}
+body section .box {
+  position: relative;
+  width: 90vw;
+  height: 70vh;
+  border: 5px solid #6f5b44;
+  border-radius: 50px;
+}
+body section .box .title {
+  position: relative;
+  text-align: center;
+  height: 4rem;
+  border-radius: 44px 44px 0 0;
+  line-height: 4rem;
+  color: white;
+  background-color: #6f5b44;
+  font-size: 2rem;
+  font-weight: 700;
+}
+body section .box .title .back {
+  display: none;
+  position: absolute;
+  left: 1rem;
+  top: -50%;
+  transform: translateY(50%);
+  width: 28px;
+  height: 28px;
+}
+body section .box .title .back img {
+  width: 100%;
+  height: 100%;
+}
+body section .box .switch {
+  position: absolute;
+  left: 2rem;
+  top: 6rem;
+  width: 120px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 100px;
+  color: #6f5b44;
+  background-color: #997e5f;
+}
+body section .box .switch button {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 50px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 100px;
+  color: #997e5f;
+  background-color: #e4dccb;
+}
+body section .box .switch .hidden {
+  visibility: hidden;
+}
+body section .box .switch .left {
+  animation: left 0.2s ease-in-out forwards;
+}
+body section .box .switch .right {
+  animation: right 0.2s ease-in-out forwards;
+}
+@keyframes left {
+  from {
+    left: 65px;
+  }
+  to {
+    left: 5px;
+  }
+}
+@keyframes right {
+  from {
+    left: 5px;
+  }
+  to {
+    left: 65px;
+  }
+}
+body section .box .noList {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body section .box .noList p {
+  color: #997e5f;
+  font-weight: 700;
+}
+body section .box .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-gap: 5%;
+  justify-content: center;
+  margin-top: 100px;
+  height: 65%;
+  overflow-y: auto;
+  /* Chrome Safari */
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE 10+ */
+  -ms-overflow-style: none;
+}
+body section .box .list::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+body section .box .list .stopItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 350px;
+  height: 68px;
+  border-bottom: 1px solid #997e5f;
+}
+body section .box .list .stopItem img {
+  width: 35px;
+  height: 35px;
+  margin-right: 1rem;
+}
+body section .box .list .stopItem p {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+body section .box .list .stopItem button {
+  position: absolute;
+  right: 0.5rem;
+  width: 24px;
+  height: 24px;
+  background: url("../images/Icon/like-stop.svg") no-repeat center;
+}
+body section .box .list .busItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 350px;
+  height: 120px;
+  margin: 1rem 0;
+  border-radius: 20px;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+body section .box .list .busItem .busBox {
+  width: 90%;
+}
+body section .box .list .busItem .busBox p {
+  margin: 0.5rem;
+  font-weight: 700;
+}
+body section .box .list .busItem .busBox .busName {
+  font-size: 1.2rem;
+  color: #6f5b44;
+}
+body section .box .list .busItem button {
+  position: absolute;
+  right: 1rem;
+  width: 24px;
+  height: 24px;
+  margin: 0 0.5rem;
+  background: url("../images/Icon/like-bus.svg") no-repeat center;
+}
+body section .box .list .hidden {
+  display: none;
+}
+body section .box .hidden {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  body section .box .list {
+    grid-gap: 5%;
+    grid-template-rows: repeat(auto-fill, 150px);
+    height: 75%;
+  }
+}
+@media (max-width: 960px) {
+  body section .box .list {
+    grid-gap: 2%;
+    grid-template-rows: repeat(auto-fill, 150px);
+    height: 75%;
+  }
+}
+@media (max-width: 640px) {
+  body .loading img {
+    width: 170px;
+    height: 82px;
+  }
+  body .loading .dotBox {
+    width: 76px;
+    height: 12px;
+  }
+  body .loading .dotBox .dot {
+    width: 12px;
+    height: 12px;
+  }
+  body header {
+    position: absolute;
+    z-index: -10;
+    visibility: hidden;
+  }
+  body section {
+    display: block;
+  }
+  body section .box {
+    width: 100vw;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  body section .box .title {
+    border-radius: 0;
+  }
+  body section .box .title .back {
+    display: block;
+  }
+  body section .box .noList {
+    height: 90vh;
+  }
+  body section .box .list {
+    display: flex;
+    grid-gap: 0;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 80vh;
+  }
+  body section .box .hidden {
+    display: none;
+  }
+}/*# sourceMappingURL=collection.css.map */
