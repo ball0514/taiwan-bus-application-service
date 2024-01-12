@@ -354,6 +354,10 @@ body {
       .index {
         padding-top: 1rem;
       }
+      .warm {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }

@@ -227,6 +227,15 @@ body {
         height: 50vh;
         .bus {
           bottom: 2rem;
+          ul {
+            li {
+              a {
+                p {
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
         }
         .shadow {
           bottom: 4rem;

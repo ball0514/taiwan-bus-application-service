@@ -154,14 +154,14 @@ body .move {
 }
 @media (max-width: 1024px) {
   body #choose {
-    top: 40%;
+    top: 35%;
   }
   body .list {
     width: 600px;
     height: 100px;
     right: 50%;
     transform: translateX(50%);
-    top: 30%;
+    top: 25%;
   }
 }
 @media (max-width: 640px) {
@@ -197,12 +197,12 @@ body .move {
     left: 50%;
     top: 30%;
   }
-  body div #bus {
+  body .picture #bus {
     width: 480px;
     height: 231px;
     left: -250px;
   }
-  body div #stop {
+  body .picture #stop {
     width: 384px;
     height: 290px;
     left: 60px;

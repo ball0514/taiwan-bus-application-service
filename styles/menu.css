@@ -223,6 +223,9 @@ body section .hidden {
   body section .car .bus {
     bottom: 2rem;
   }
+  body section .car .bus ul li a p {
+    font-size: 1.2rem;
+  }
   body section .car .shadow {
     bottom: 4rem;
   }

@@ -165,14 +165,14 @@ body {
 @media (max-width: 1024px) {
   body {
     #choose {
-      top: 40%;
+      top: 35%;
     }
     .list {
       width: 600px;
       height: 100px;
       right: 50%;
       transform: translateX(50%);
-      top: 30%;
+      top: 25%;
     }
   }
 }
@@ -213,7 +213,7 @@ body {
       left: 50%;
       top: 30%;
     }
-    div {
+    .picture {
       #bus {
         width: 480px;
         height: 231px;

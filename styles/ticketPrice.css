@@ -345,6 +345,10 @@ body section .out {
   body section .index {
     padding-top: 1rem;
   }
+  body section .warm {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 @media (max-width: 640px) {
   body section .box .boxName {
