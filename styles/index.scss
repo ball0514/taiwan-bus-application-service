@@ -26,17 +26,26 @@ body {
     .dotBox {
       width: 140px;
       height: 20px;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
+      position: relative;
       .dot {
         width: 20px;
         height: 20px;
         border-radius: 50%;
         background-color: #997e5f;
+        position: absolute;
+      }
+      .dot1 {
+        left: 0;
+      }
+      .dot2 {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .dot3 {
+        right: 0;
       }
       .hidden {
-        visibility: hidden;
+        opacity: 0;
       }
     }
   }
@@ -109,7 +118,7 @@ body {
       margin: 0.5rem;
     }
   }
-  div {
+  .picture {
     display: flex;
     justify-content: center;
     img {

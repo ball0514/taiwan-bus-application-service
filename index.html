@@ -12,11 +12,40 @@
     <div class="loading">
       <img src="./images/Icon/bus.svg" alt="" />
       <div class="dotBox">
-        <div class="dot hidden"></div>
-        <div class="dot hidden"></div>
-        <div class="dot hidden"></div>
+        <div class="dot dot1 hidden"></div>
+        <div class="dot dot2 hidden"></div>
+        <div class="dot dot3 hidden"></div>
       </div>
     </div>
+    <script>
+      const dot = document.querySelectorAll(".dot");
+      function loading() {
+        dot.forEach((dot, index) => {
+          switch (index) {
+            case 0:
+              setTimeout(() => {
+                dot.classList.remove("hidden");
+              }, 500);
+              break;
+            case 1:
+              setTimeout(() => {
+                dot.classList.remove("hidden");
+              }, 1000);
+              break;
+            case 2:
+              setTimeout(() => {
+                dot.classList.remove("hidden");
+              }, 1500);
+              break;
+          }
+        });
+        dot.forEach((dot) => {
+          dot.classList.add("hidden");
+        });
+      }
+      loading();
+      const repeat = setInterval(loading, 2000);
+    </script>
     <nav>
       <ul>
         <li><a href="#">幫助中心</a></li>
@@ -48,7 +77,7 @@
       <!-- <li><a href="#" class="city" value="澎湖縣">澎湖縣</a></li>
       <li><a href="#" class="city" value="基隆市">基隆市</a></li> -->
     </ul>
-    <div>
+    <div class="picture">
       <img src="./images/Icon/stop.svg" alt="" id="stop" />
       <img src="./images/Icon/bus.svg" alt="" id="bus" />
     </div>
