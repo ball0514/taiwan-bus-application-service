@@ -353,7 +353,7 @@ body section .hidden {
     font-size: 1rem;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 440px) {
   body section .cloud a img {
     width: 35.84px;
     height: 35.84px;
