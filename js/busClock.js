@@ -244,6 +244,121 @@ document.addEventListener("DOMContentLoaded", function () {
             );
         }
       });
+
+      function immediate() {
+        GetRouteStop();
+        GetDynamic();
+        dynamic.forEach((data) => {
+          routeStop.forEach((bus) => {
+            bus.Stops.forEach((stop) => {
+              if (data.StopName.Zh_tw == stop.StopName.Zh_tw) {
+                stop.EstimateTime = Math.floor(data.EstimateTime / 60);
+                if (!stop.EstimateTime) {
+                  stop.EstimateTime = "未發車";
+                } else if (stop.EstimateTime < 2) {
+                  stop.EstimateTime = "進站中";
+                } else {
+                  stop.EstimateTime = `${stop.EstimateTime}分`;
+                }
+              }
+            });
+          });
+        });
+        routeStop.forEach((stop) => {
+          if (stop.Direction == 0 && stop.Stops.length > forwardlength) {
+            forwardStops = stop.Stops;
+          } else if (
+            stop.Direction == 1 &&
+            stop.Stops.length > backwardlength
+          ) {
+            backwardStops = stop.Stops;
+          }
+        });
+        forward.innerHTML = "";
+        forwardStops.forEach((data, index) => {
+          if (data.EstimateTime == undefined) {
+            forward.innerHTML += `<div class="route">
+          <div class="time nogo">讀取中</div>
+          <div>${data.StopName.Zh_tw}</div>
+          <span></span>
+          <div class="straight"></div>
+        </div>`;
+          } else if (data.EstimateTime == "未發車") {
+            forward.innerHTML += `<div class="route">
+            <div class="time nogo">${data.EstimateTime}</div>
+            <div>${data.StopName.Zh_tw}</div>
+            <span></span>
+            <div class="straight"></div>
+          </div>`;
+          } else if (data.EstimateTime == "進站中") {
+            forward.innerHTML += `<div class="route">
+            <div class="time coming">${data.EstimateTime}</div>
+            <div>${data.StopName.Zh_tw}</div>
+            <span></span>
+            <div class="straight"></div>
+          </div>`;
+          } else {
+            forward.innerHTML += `<div class="route">
+            <div class="time">${data.EstimateTime}</div>
+            <div>${data.StopName.Zh_tw}</div>
+            <span></span>
+            <div class="straight"></div>
+          </div>`;
+          }
+          if (index === 0) {
+            document
+              .querySelectorAll(".straight")
+              [index].classList.add("first");
+          } else if (index === forwardStops.length - 1) {
+            document.querySelectorAll(".straight")[index].classList.add("last");
+          }
+        });
+
+        backward.innerHTML = "";
+        backwardStops.forEach((data, index) => {
+          if (data.EstimateTime == undefined) {
+            backward.innerHTML += `<div class="route">
+          <div class="time nogo">讀取中</div>
+          <div>${data.StopName.Zh_tw}</div>
+          <span></span>
+          <div class="straight"></div>
+        </div>`;
+          } else if (data.EstimateTime == "未發車") {
+            backward.innerHTML += `<div class="route">
+        <div class="time nogo">${data.EstimateTime}</div>
+            <div>${data.StopName.Zh_tw}</div>
+            <span></span>
+            <div class="straight"></div>
+          </div>`;
+          } else if (data.EstimateTime == "進站中") {
+            backward.innerHTML += `<div class="route">
+            <div class="time coming">${data.EstimateTime}</div>
+            <div>${data.StopName.Zh_tw}</div>
+            <span></span>
+            <div class="straight"></div>
+          </div>`;
+          } else {
+            backward.innerHTML += `<div class="route">
+            <div class="time">${data.EstimateTime}</div>
+            <div>${data.StopName.Zh_tw}</div>
+            <span></span>
+            <div class="straight"></div>
+          </div>`;
+          }
+          if (index === 0) {
+            document
+              .querySelectorAll(".straight")
+              [forwardStops.length].classList.add("first");
+          } else if (index === backwardStops.length - 1) {
+            document
+              .querySelectorAll(".straight")
+              [forwardStops.length + backwardStops.length - 1].classList.add(
+                "last"
+              );
+          }
+        });
+      }
+      setInterval(immediate, 30000);
     });
   });
 
