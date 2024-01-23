@@ -23,23 +23,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const noList = document.querySelector(".noList");
   const list = document.querySelector(".list");
   const history = document.querySelector(".history");
-  if (!localStorage.getItem("record")) {
-    localStorage.setItem("record", "[]");
+
+  if (!localStorage.getItem(`${cityMapping[city]} record`)) {
+    localStorage.setItem(`${cityMapping[city]} record`, "[]");
   }
 
-  const recordList = JSON.parse(localStorage.getItem("record"));
+  if (!localStorage.getItem(`${cityMapping[city]} bus`)) {
+    localStorage.setItem(`${cityMapping[city]} bus`, "[]");
+  }
+
+  let busList = JSON.parse(localStorage.getItem(`${cityMapping[city]} bus`));
+  const recordList = JSON.parse(
+    localStorage.getItem(`${cityMapping[city]} record`)
+  );
   if (bus == null && recordList.length !== 0) {
     noList.classList.add("hidden");
     list.classList.add("hidden");
     history.classList.remove("hidden");
     recordList.forEach((data) => {
-      history.innerHTML += `<button class="item">
+      if (busList.some((obj) => obj.busName === data.routeName)) {
+        history.innerHTML += `<button class="item">
+      <div class="bus">
+        <p class="busName">${data.routeName}</p>
+        <p>${data.startName}-${data.endName}</p>
+      </div>
+      <div class="like love"></div>
+    </button>`;
+      } else {
+        history.innerHTML += `<button class="item">
       <div class="bus">
         <p class="busName">${data.routeName}</p>
         <p>${data.startName}-${data.endName}</p>
       </div>
       <div class="like"></div>
     </button>`;
+      }
     });
   }
 
@@ -53,13 +71,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   apiget.map((data) => {
     // console.log(data);
-    list.innerHTML += `<button class="item">
+    if (busList.some((obj) => obj.busName === data.RouteName.Zh_tw)) {
+      list.innerHTML += `<button class="item">
           <div class="bus">
             <p class="busName">${data.RouteName.Zh_tw}</p>
             <p>${data.DepartureStopNameZh}-${data.DestinationStopNameZh}</p>
           </div>
-          <div class="like"></div>
+          <div class="like love"></div>
         </button>`;
+    } else {
+      list.innerHTML += `<button class="item">
+      <div class="bus">
+        <p class="busName">${data.RouteName.Zh_tw}</p>
+        <p>${data.DepartureStopNameZh}-${data.DestinationStopNameZh}</p>
+      </div>
+      <div class="like"></div>
+    </button>`;
+    }
   });
 
   const index = document.querySelector(".index");
@@ -114,7 +142,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const endName = bus.querySelectorAll("p")[1].textContent.slice(mark + 1);
       localStorage.setItem("routeName", routeName);
       let recordFilter = new Set();
-      let record = JSON.parse(localStorage.getItem("record"));
+      let record = JSON.parse(
+        localStorage.getItem(`${cityMapping[city]} record`)
+      );
       record.unshift({ routeName, startName, endName });
       const recordResult = record.filter((item) =>
         !recordFilter.has(item.routeName)
@@ -122,7 +152,10 @@ document.addEventListener("DOMContentLoaded", function () {
           : false
       );
       record = Array.from(recordResult);
-      localStorage.setItem("record", JSON.stringify(record));
+      localStorage.setItem(
+        `${cityMapping[city]} record`,
+        JSON.stringify(record)
+      );
 
       GetRouteStop();
       GetDynamic();
@@ -362,9 +395,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  if (!localStorage.getItem("bus")) {
-    localStorage.setItem("bus", "[]");
-  }
   const like = document.querySelectorAll(".like");
   like.forEach((like) => {
     like.addEventListener("click", (e) => {
@@ -373,21 +403,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const busName =
         like.parentElement.childNodes[1].childNodes[1].textContent;
       const route = like.parentElement.childNodes[1].childNodes[3].textContent;
-      let busListFilter = new Set();
-      let busList = JSON.parse(localStorage.getItem("bus"));
-      busList.unshift({ busName, route });
-      const busListResult = busList.filter((item) =>
-        !busListFilter.has(item.busName)
-          ? busListFilter.add(item.busName)
-          : false
-      );
-      busList = Array.from(busListResult);
-      // if (!busList.some((item) => item.busName === busName)) {
-      //   busList.push({ busName, route });
-      // } else {
-      //   busList = busList.filter((item) => item.busName !== busName);
-      // }
-      localStorage.setItem("bus", JSON.stringify(busList));
+      if (!busList.some((item) => item.busName === busName)) {
+        busList.unshift({ busName, route });
+      } else {
+        busList = busList.filter((item) => item.busName !== busName);
+      }
+      localStorage.setItem(`${cityMapping[city]} bus`, JSON.stringify(busList));
     });
   });
 

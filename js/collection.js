@@ -26,8 +26,8 @@ busName.addEventListener("click", () => {
   mode();
 });
 
-let stopList = JSON.parse(localStorage.getItem("stop"));
-let busList = JSON.parse(localStorage.getItem("bus"));
+let stopList = JSON.parse(localStorage.getItem(`${cityMapping[city]} stop`));
+let busList = JSON.parse(localStorage.getItem(`${cityMapping[city]} bus`));
 
 function mode() {
   if (page == "stop") {
@@ -48,7 +48,10 @@ function mode() {
         like.addEventListener("click", () => {
           let stopName = like.parentElement.childNodes[1].textContent;
           stopList = stopList.filter((item) => item !== stopName);
-          localStorage.setItem("stop", JSON.stringify(stopList));
+          localStorage.setItem(
+            `${cityMapping[city]} stop`,
+            JSON.stringify(stopList)
+          );
           like.parentElement.classList.add("hidden");
           if (stopList.length == 0) {
             noList.classList.remove("hidden");
@@ -80,7 +83,10 @@ function mode() {
           let route =
             like.parentElement.childNodes[0].childNodes[1].textContent;
           busList = busList.filter((item) => item.busName !== busName);
-          localStorage.setItem("bus", JSON.stringify(busList));
+          localStorage.setItem(
+            `${cityMapping[city]} bus`,
+            JSON.stringify(busList)
+          );
           like.parentElement.classList.add("hidden");
           if (busList.length == 0) {
             noList.classList.remove("hidden");
